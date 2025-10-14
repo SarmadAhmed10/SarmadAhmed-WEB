@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,13 +28,13 @@ export default function Hero({ heroRef, projectsRef }: Props) {
   const frameTopLeftRef = useRef<HTMLDivElement | null>(null);
   const frameBottomRightRef = useRef<HTMLDivElement | null>(null);
 
+
   useEffect(() => {
     const letters = titleRef.current?.querySelectorAll('.letter') ?? [];
 
-    /** OPTIMIZED HERO ENTRANCE - Faster & Snappier **/
+    /** OPTIMIZED HERO ENTRANCE **/
     const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
-    // Quick orb reveal
     tl.from([orbARef.current, orbBRef.current, orbCRef.current], { 
       opacity: 0, 
       scale: 0.9, 
@@ -41,14 +42,12 @@ export default function Hero({ heroRef, projectsRef }: Props) {
       stagger: 0.1 
     }, 0);
 
-    // Badge entrance - faster
     tl.from(badgeRef.current, { 
       opacity: 0, 
       y: -15, 
       duration: 0.4 
     }, 0.2);
 
-    // SVG accent - faster draw
     const path = accentRef.current?.querySelector('path');
     if (path) {
       gsap.fromTo(
@@ -58,7 +57,6 @@ export default function Hero({ heroRef, projectsRef }: Props) {
       );
     }
 
-    // Snappier name animation
     tl.from(
       letters,
       {
@@ -73,14 +71,12 @@ export default function Hero({ heroRef, projectsRef }: Props) {
       0.3
     );
 
-    // Faster subtitle
     tl.from(subtitleRef.current, { 
       y: 30, 
       opacity: 0, 
       duration: 0.5 
     }, '-=0.4');
 
-    // Faster CTAs
     tl.from(ctaRef.current, { 
       y: 30, 
       opacity: 0, 
@@ -96,16 +92,14 @@ export default function Hero({ heroRef, projectsRef }: Props) {
       clearProps: 'all'
     }, '-=0.4');
 
-    // Faster photo entrance
     tl.from(photoRef.current, { 
       opacity: 0, 
       x: -60, 
-      rotationY: -10,
+      scale: 0.9,
       duration: 0.7,
       ease: 'power2.out'
     }, '-=0.8');
 
-    // Quick frames
     tl.from([frameTopLeftRef.current, frameBottomRightRef.current], {
       scale: 0,
       opacity: 0,
@@ -113,14 +107,12 @@ export default function Hero({ heroRef, projectsRef }: Props) {
       stagger: 0.05
     }, '-=0.5');
 
-    // Fast social proof
     tl.from(socialProofRef.current, { 
       opacity: 0, 
       y: 15, 
       duration: 0.4 
     }, '-=0.3');
 
-    // Quick dots
     const dots = decorativeDotsRef.current?.querySelectorAll('.dot');
     if (dots) {
       tl.from(dots, {
@@ -132,7 +124,7 @@ export default function Hero({ heroRef, projectsRef }: Props) {
       }, '-=0.4');
     }
 
-    /** OPTIMIZED FLOATING ORBS - Less intensive **/
+    /** FLOATING ORBS **/
     const floatTL = gsap.timeline({ 
       repeat: -1, 
       yoyo: true, 
@@ -157,9 +149,9 @@ export default function Hero({ heroRef, projectsRef }: Props) {
       duration: 5.5 
     }, 0);
 
-    /** OPTIMIZED PARALLAX - Less heavy **/
+    /** PARALLAX ON SCROLL **/
     gsap.to([orbARef.current, orbBRef.current, orbCRef.current], {
-      y: 80,
+      y: 100,
       scrollTrigger: {
         trigger: heroRef.current,
         start: 'top top',
@@ -168,7 +160,18 @@ export default function Hero({ heroRef, projectsRef }: Props) {
       }
     });
 
-    /** SIMPLIFIED PHOTO TILT - More performant **/
+    /** SMOOTH SCALE ON SCROLL - No blur, just elegant zoom **/
+    gsap.to(heroRef.current, {
+      scale: 0.95,
+      scrollTrigger: {
+        trigger: heroRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1,
+      }
+    });
+
+    /** PHOTO HOVER EFFECT **/
     const photo = photoRef.current;
     if (photo) {
       const handleMouseMove = (e: MouseEvent) => {
@@ -177,8 +180,8 @@ export default function Hero({ heroRef, projectsRef }: Props) {
         const y = (e.clientY - rect.top) / rect.height - 0.5;
         
         gsap.to(photo, {
-          rotationY: x * 10,
-          rotationX: -y * 10,
+          rotationY: x * 8,
+          rotationX: -y * 8,
           duration: 0.3,
           ease: 'power1.out'
         });
@@ -197,29 +200,16 @@ export default function Hero({ heroRef, projectsRef }: Props) {
       photo.addEventListener('mouseleave', handleMouseLeave);
     }
 
-    /** OPTIMIZED CINEMATIC SCROLL - Less blur for performance **/
-    ScrollTrigger.create({
-      trigger: heroRef.current,
-      start: 'top top',
-      end: '+=120%',
-      pin: true,
-      scrub: 0.8,
-      onUpdate: (self) => {
-        const progress = self.progress;
-        gsap.to(heroRef.current, {
-          scale: 1 - progress * 0.04,
-          filter: `blur(${progress * 2}px) brightness(${1 - progress * 0.15})`,
-          duration: 0,
-          overwrite: true,
-        });
-      },
-    });
-
     return () => {
       gsap.killTweensOf('*');
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, [heroRef]);
+
+  // Auto-rotate images every 4 seconds
+  useEffect(() => {
+    // Removed auto-rotation - showing single image only
+  }, []);
 
   const handleScrollToProjects = () => {
     if (projectsRef?.current) {
@@ -232,7 +222,7 @@ export default function Hero({ heroRef, projectsRef }: Props) {
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#F9F6F3] via-[#FFF9F7] to-[#FDECEC] text-[#5A1A1A] px-6"
     >
-      {/* Optimized grain - lighter opacity */}
+      {/* Grain texture */}
       <div 
         className="absolute inset-0 opacity-[0.01] pointer-events-none mix-blend-multiply"
         style={{
@@ -240,7 +230,7 @@ export default function Hero({ heroRef, projectsRef }: Props) {
         }}
       />
 
-      {/* Lighter grid */}
+      {/* Grid overlay */}
       <div 
         className="absolute inset-0 opacity-[0.015] pointer-events-none"
         style={{
@@ -249,7 +239,7 @@ export default function Hero({ heroRef, projectsRef }: Props) {
         }}
       />
 
-      {/* Optimized Orbs - will-change for GPU acceleration */}
+      {/* Floating Orbs */}
       <div
         ref={orbARef}
         className="absolute top-20 left-[-10%] w-96 h-96 rounded-full mix-blend-multiply"
@@ -289,7 +279,7 @@ export default function Hero({ heroRef, projectsRef }: Props) {
       {/* Main Content */}
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center max-w-7xl mx-auto w-full">
         
-        {/* Photo Section */}
+        {/* Photo Section with Carousel */}
         <div className="relative group">
           <div 
             ref={frameTopLeftRef}
@@ -302,23 +292,33 @@ export default function Hero({ heroRef, projectsRef }: Props) {
           
           <div
             ref={photoRef}
-            className="relative w-full h-[400px] md:h-[500px] bg-gradient-to-tr from-gray-200 to-gray-300 rounded-2xl overflow-hidden shadow-2xl"
+            className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-white"
             style={{
               transformStyle: 'preserve-3d',
               perspective: '1000px',
               willChange: 'transform'
             }}
           >
+            {/* Single image - your best photo */}
+            <div className="absolute inset-0">
+              <Image
+                src="/2ndPIC.jpeg"
+                alt="Sarmad Ahmed"
+                fill
+                className="object-contain"
+                priority
+                quality={100}
+              />
+            </div>
+
+            {/* Shimmer overlay */}
             <div 
               className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out pointer-events-none"
             />
             
-            <div className="relative w-full h-full flex items-center justify-center border border-gray-300/50">
-              <span className="text-gray-500 italic text-lg font-light">Your Photo Here</span>
-              
-              <div className="absolute top-4 left-4 w-12 h-12 border-t border-l border-[#9C2C2C]/20" />
-              <div className="absolute bottom-4 right-4 w-12 h-12 border-b border-r border-[#9C2C2C]/20" />
-            </div>
+            {/* Inner decorative corners */}
+            <div className="absolute top-4 left-4 w-12 h-12 border-t border-l border-[#9C2C2C]/20" />
+            <div className="absolute bottom-4 right-4 w-12 h-12 border-b border-r border-[#9C2C2C]/20" />
           </div>
         </div>
 
