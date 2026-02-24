@@ -117,7 +117,7 @@ export default function HomePage() {
 
             <div ref={loaderTagRef} className="mb-12">
               <p className="text-[#666] text-sm tracking-[0.3em] uppercase">
-                Full-Stack Developer &amp; Designer
+                AI Engineer &amp; Full-Stack Developer
               </p>
             </div>
 
@@ -164,8 +164,8 @@ export default function HomePage() {
                 <div>
                   <h3 className="font-display text-2xl font-bold gradient-text mb-4">Sarmad Ahmed</h3>
                   <p className="text-[#666] text-sm leading-relaxed max-w-sm">
-                    Crafting exceptional digital experiences with precision and creativity.
-                    Always pushing the boundaries of what&apos;s possible on the web.
+                    Building intelligent software at the intersection of AI and product engineering.
+                    From LLM integrations to production-grade SaaS platforms.
                   </p>
                 </div>
                 <div>
@@ -211,7 +211,7 @@ export default function HomePage() {
               </div>
               <div className="border-t border-[#1a1a1a] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-[#444] text-xs">&copy; {new Date().getFullYear()} Sarmad Ahmed. All rights reserved.</p>
-                <p className="text-[#333] text-xs">Designed &amp; Developed with passion</p>
+                <p className="text-[#333] text-xs">Built with Next.js, GSAP &amp; AI</p>
               </div>
             </div>
           </footer>

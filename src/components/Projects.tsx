@@ -13,52 +13,52 @@ export default function Projects({ projectsRef }: any) {
 
   const projects = [
     {
-      title: 'Leasingers.com',
-      subtitle: 'Web Design & Development',
-      description: 'A professional leasing and real-estate web platform built with modern TypeScript and Next.js. Features responsive design, smooth animations, and optimized performance.',
-      tech: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Vercel'],
-      link: 'https://github.com/SarmadAhmed10/Leasingers.com',
-      icon: '🏢',
+      title: 'NexusAI',
+      subtitle: 'AI-Powered SaaS Platform',
+      description: 'A multi-tenant SaaS platform that lets businesses deploy custom AI assistants trained on their own data. Features RAG pipeline, real-time chat, usage analytics, and Stripe billing.',
+      tech: ['Next.js', 'OpenAI', 'Pinecone', 'FastAPI', 'Stripe'],
+      link: '#',
+      icon: '🧠',
     },
     {
-      title: 'Coded App Frontend',
-      subtitle: 'Mobile-First Application',
-      description: 'A sleek and interactive app front-end built with TypeScript. Focuses on user experience with clean component architecture and modern UI patterns.',
-      tech: ['TypeScript', 'React', 'CSS Modules', 'REST API'],
-      link: 'https://github.com/SarmadAhmed10/CodedAppFront-End',
-      icon: '📱',
+      title: 'DocuMind',
+      subtitle: 'Intelligent Document Analysis',
+      description: 'An AI document intelligence tool that extracts, summarizes, and answers questions from PDFs, contracts, and research papers using GPT-4 with retrieval-augmented generation.',
+      tech: ['Python', 'LangChain', 'GPT-4', 'ChromaDB', 'React'],
+      link: '#',
+      icon: '📄',
     },
     {
-      title: 'Optimail v1.1',
-      subtitle: 'Email Optimization Tool',
-      description: 'An intelligent email optimization solution built with Python. Automates email workflows, improves deliverability, and provides analytics for better communication.',
-      tech: ['Python', 'Automation', 'Email API', 'Analytics'],
-      link: 'https://github.com/SarmadAhmed10/Optimail_Version-1.1-New',
+      title: 'AgentForge',
+      subtitle: 'Multi-Agent Orchestration Framework',
+      description: 'An open-source framework for building autonomous AI agent pipelines. Supports tool-use, memory, chain-of-thought reasoning, and multi-agent collaboration out of the box.',
+      tech: ['Python', 'LangGraph', 'Redis', 'WebSockets', 'Docker'],
+      link: '#',
+      icon: '⚡',
+    },
+    {
+      title: 'VoiceFlow Studio',
+      subtitle: 'AI Voice Assistant Builder',
+      description: 'A no-code platform for creating AI-powered voice assistants and phone agents. Integrates with Twilio, ElevenLabs, and OpenAI for natural, human-like conversations.',
+      tech: ['TypeScript', 'Twilio', 'ElevenLabs', 'OpenAI', 'AWS'],
+      link: '#',
+      icon: '🎙️',
+    },
+    {
+      title: 'Optimail AI',
+      subtitle: 'AI Email Optimization Engine',
+      description: 'An intelligent email platform that uses LLMs to auto-generate, A/B test, and personalize email campaigns. Improved client open rates by 3x with AI-driven subject line optimization.',
+      tech: ['Python', 'GPT-4', 'FastAPI', 'PostgreSQL', 'Redis'],
+      link: '#',
       icon: '📧',
     },
     {
-      title: 'Ivy Examples',
-      subtitle: 'C# Learning & Demos',
-      description: 'A collection of C# examples and demonstrations showcasing various programming concepts, design patterns, and best practices in .NET development.',
-      tech: ['C#', '.NET', 'OOP', 'Design Patterns'],
-      link: 'https://github.com/SarmadAhmed10/Ivy-Examples',
-      icon: '🧩',
-    },
-    {
-      title: 'Optimail Solutions',
-      subtitle: 'Enterprise Email Platform',
-      description: 'The enterprise-grade version of Optimail — a comprehensive email management and optimization platform designed for businesses at scale.',
-      tech: ['Full-Stack', 'API Design', 'Scalability', 'DevOps'],
-      link: 'https://github.com/SarmadAhmed10/Optimail-Solutions',
-      icon: '🚀',
-    },
-    {
-      title: 'Personal Portfolio',
-      subtitle: 'This Website',
-      description: 'The very site you\'re viewing — built with Next.js, GSAP animations, and a dark premium aesthetic. Fully responsive with cinematic transitions.',
-      tech: ['Next.js', 'GSAP', 'Tailwind CSS', 'TypeScript'],
-      link: 'https://github.com/SarmadAhmed10/SarmadAhmed-WEB',
-      icon: '✨',
+      title: 'CodeReview AI',
+      subtitle: 'Automated Code Analysis',
+      description: 'A GitHub-integrated tool that reviews pull requests using AI — identifies bugs, security vulnerabilities, and suggests improvements with inline comments and severity scoring.',
+      tech: ['Node.js', 'GitHub API', 'OpenAI', 'TypeScript', 'Vercel'],
+      link: '#',
+      icon: '🔍',
     },
   ];
 
@@ -130,7 +130,7 @@ export default function Projects({ projectsRef }: any) {
 
               {/* Link indicator */}
               <div className="flex items-center gap-2 text-sm text-[#555] group-hover:text-[#c9a96e] transition-colors duration-300">
-                <span>View on GitHub</span>
+                <span>View Project</span>
                 <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -150,7 +150,7 @@ export default function Projects({ projectsRef }: any) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#222] text-[#888] text-sm hover:border-[#c9a96e]/30 hover:text-[#c9a96e] transition-all duration-300"
           >
-            <span>View All on GitHub</span>
+            <span>View All Projects</span>
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>

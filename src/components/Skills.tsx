@@ -13,16 +13,16 @@ export default function Skills({ skillsRef }: any) {
 
   const skillCategories = [
     {
-      title: 'Frontend',
-      skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'GSAP', 'HTML/CSS'],
+      title: 'AI & Machine Learning',
+      skills: ['OpenAI / GPT-4', 'LangChain', 'RAG Pipelines', 'Fine-Tuning', 'Vector DBs', 'Prompt Engineering', 'Hugging Face', 'AI Agents'],
     },
     {
-      title: 'Backend',
-      skills: ['Node.js', 'Python', 'C#', 'REST APIs', 'MongoDB', 'PostgreSQL'],
+      title: 'Full-Stack Development',
+      skills: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Python', 'FastAPI', 'PostgreSQL', 'MongoDB'],
     },
     {
-      title: 'Tools & DevOps',
-      skills: ['Git', 'Docker', 'Vercel', 'VS Code', 'Figma', 'Linux'],
+      title: 'Cloud & Infrastructure',
+      skills: ['AWS', 'Docker', 'Vercel', 'Redis', 'CI/CD', 'Git', 'Supabase', 'Linux'],
     },
   ];
 
@@ -73,7 +73,7 @@ export default function Skills({ skillsRef }: any) {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-[#444] text-sm">Always learning. Always growing.</p>
+          <p className="text-[#444] text-sm">Shipping AI-native products since 2022.</p>
         </div>
       </div>
     </section>

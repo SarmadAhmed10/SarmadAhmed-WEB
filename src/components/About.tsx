@@ -32,9 +32,9 @@ export default function About({ aboutRef }: any) {
   }, [aboutRef]);
 
   const stats = [
-    { number: '3+', label: 'Years of Experience', desc: 'Building modern web applications' },
-    { number: '15+', label: 'Projects Delivered', desc: 'From concept to deployment' },
-    { number: '10+', label: 'Technologies', desc: 'Across the full stack' },
+    { number: '4+', label: 'Years of Experience', desc: 'AI integration & full-stack development' },
+    { number: '30+', label: 'Projects Shipped', desc: 'AI products, SaaS platforms & APIs' },
+    { number: '20+', label: 'Technologies', desc: 'LLMs, cloud infra & modern frameworks' },
   ];
 
   return (
@@ -55,21 +55,24 @@ export default function About({ aboutRef }: any) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div ref={descRef} className="space-y-6">
             <p className="text-lg text-[#999] font-light leading-relaxed">
-              I&apos;m a passionate full-stack developer from <span className="text-[#f5f5f5]">Karachi, Pakistan</span>,
-              focused on creating visually stunning and high-performing web experiences.
+              I&apos;m an AI integration specialist and full-stack engineer based in <span className="text-[#f5f5f5]">Karachi, Pakistan</span>.
+              I help startups and enterprises embed intelligence into their products — from GPT-powered chatbots
+              and RAG pipelines to autonomous agent systems.
             </p>
             <p className="text-lg text-[#999] font-light leading-relaxed">
-              My approach combines clean code with thoughtful design — building products that
-              don&apos;t just function beautifully, but feel <span className="text-[#c9a96e] italic">magical to use</span>.
+              My work sits at the intersection of <span className="text-[#c9a96e] italic">machine learning and product engineering</span>.
+              I don&apos;t just prototype — I build production-ready AI systems with proper evaluation,
+              observability, and scalable infrastructure.
             </p>
             <p className="text-lg text-[#999] font-light leading-relaxed">
-              From interactive front-ends with React and Next.js to robust back-end systems with
-              Node.js and Python, I bring ideas to life across the entire stack.
+              Whether it&apos;s fine-tuning LLMs, designing multi-agent architectures, or building
+              full-stack SaaS platforms with Next.js and Python, I deliver end-to-end —
+              from research to deployment.
             </p>
             <div className="mt-8 pt-8 border-t border-[#1a1a1a]">
               <p className="text-sm text-[#666] italic">
-                &quot;Great software is not just about code — it&apos;s about crafting experiences
-                that leave a lasting impression.&quot;
+                &quot;The best AI products don&apos;t feel like AI at all — they feel like
+                magic woven into everyday software.&quot;
               </p>
             </div>
           </div>

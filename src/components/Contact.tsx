@@ -81,8 +81,9 @@ export default function Contact({ contactRef }: any) {
             <span className="gradient-text italic">Talk</span>
           </h2>
           <p ref={subtitleRef} className="text-lg text-[#888] font-light max-w-2xl mx-auto leading-relaxed">
-            Have a project in mind? I&apos;m always open to discussing new opportunities,
-            creative ideas, or ways to bring your vision to life.
+            Building an AI product or need to integrate intelligence into your platform?
+            I&apos;m always open to discussing new challenges — from LLM integrations
+            to full-stack SaaS builds.
           </p>
         </div>
 
@@ -127,7 +128,7 @@ export default function Contact({ contactRef }: any) {
               <div className="w-2 h-2 bg-green-500 rounded-full" />
               <div className="absolute inset-0 w-2 h-2 bg-green-500 rounded-full animate-ping" />
             </div>
-            <span className="text-xs text-[#888] font-medium">Available for freelance projects</span>
+            <span className="text-xs text-[#888] font-medium">Available for AI consulting & contract work</span>
           </div>
         </div>
       </div>

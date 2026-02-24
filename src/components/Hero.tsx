@@ -86,7 +86,7 @@ export default function Hero({ heroRef, projectsRef }: Props) {
 
           <div className="flex items-center gap-4">
             <div ref={lineLeftRef} className="h-px w-12 bg-gradient-to-r from-[#c9a96e] to-transparent" />
-            <span className="text-xs text-[#666] tracking-[0.3em] uppercase">Full-Stack Developer</span>
+            <span className="text-xs text-[#666] tracking-[0.3em] uppercase">AI Engineer & Full-Stack Developer</span>
             <div ref={lineRightRef} className="h-px flex-1 bg-gradient-to-r from-transparent via-[#222] to-transparent" />
           </div>
 
@@ -106,9 +106,9 @@ export default function Hero({ heroRef, projectsRef }: Props) {
           </div>
 
           <p ref={subtitleRef} className="text-lg text-[#888] font-light max-w-lg leading-relaxed">
-            I craft performant, interactive web experiences that blend
-            design and engineering — turning creative ideas into{' '}
-            <span className="text-[#c9a96e] font-normal italic">elegant digital realities</span>.
+            I build intelligent systems at the intersection of AI and software engineering
+            — from LLM-powered applications to production-grade platforms that{' '}
+            <span className="text-[#c9a96e] font-normal italic">think, adapt, and scale</span>.
           </p>
 
           <div ref={ctaRef} className="flex flex-wrap items-center gap-4 pt-4">
@@ -142,7 +142,7 @@ export default function Hero({ heroRef, projectsRef }: Props) {
           </div>
           <div className="absolute -bottom-4 -right-4 md:bottom-8 md:-right-8 px-4 py-2 rounded-lg bg-[#111] border border-[#222] shadow-xl">
             <div className="text-xs text-[#666] mb-1">Experience</div>
-            <div className="text-lg font-bold gradient-text">3+ Years</div>
+            <div className="text-lg font-bold gradient-text">4+ Years</div>
           </div>
         </div>
       </div>
